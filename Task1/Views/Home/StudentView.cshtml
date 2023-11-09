@@ -1,0 +1,21 @@
+﻿@model Task1.Models.Student
+
+@{
+    ViewData["Title"] = "StudentView";
+}
+@using (Html.BeginForm("Create","Student",FormMethod.Post))
+{ 
+    @Html.LabelFor(m => m.FirstName)
+    @Html.TextBoxFor(m => m.FirstName)
+
+    @Html.LabelFor(m => m.LastName)
+    @Html.TextBoxFor(m => m.LastName)
+
+    @Html.LabelFor(m => m.BranchName)
+    @Html.DropDownListFor(m => m.BranchId, ViewBag.BranchNames as SelectList, "Select Branch")
+
+    @Html.LabelFor(m => m.YearName)
+    @Html.TextBoxFor(m => m.YearName)
+
+    <input type="submit" value="Save" />
+}
